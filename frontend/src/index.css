@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --color-midnight: #0d0b15;
+  --color-ash: #1e1b2a;
+  --color-bone: #f1ede4;
+  --color-accent: #b8975b;
+  --color-overlay: rgba(8, 6, 12, 0.7);
+  --font-display: 'Cormorant Garamond', 'Playfair Display', serif;
+  --font-body: 'Spectral', 'Libre Baskerville', serif;
+}
+
+* {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply bg-midnight text-bone font-body antialiased min-h-screen;
+  background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.05), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.03), transparent 45%);
+  background-color: var(--color-midnight);
+}
+
+#root {
+  @apply min-h-screen;
+}
+
+a {
+  @apply text-bone transition-colors duration-300;
+}
+
+a:focus-visible,
+button:focus-visible {
+  @apply outline outline-2 outline-offset-2 outline-accent;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+}
