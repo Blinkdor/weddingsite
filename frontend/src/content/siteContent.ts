@@ -1,3 +1,5 @@
+import { assetPath } from '../utils/assetPath';
+
 export type SectionId = 'announcement' | 'details' | 'gallery';
 
 export interface SectionContent {
@@ -23,7 +25,7 @@ export const sections: SectionContent[] = [
     description:
       'Request the honor of your presence as they bind their vows beneath candlelit arches on the eve of the Harvest Moon.',
     accentLine: 'Saturday, October 31 · Blackwood Manor',
-    backgroundImage: '/images/announcement.jpg',
+    backgroundImage: assetPath('/images/announcement.jpg'),
     layerVariant: 'arches',
   },
   {
@@ -32,7 +34,7 @@ export const sections: SectionContent[] = [
     subtitle: 'Arrive prepared for an evening of whispered vows and string quartets.',
     description:
       'Each moment is curated to feel intimate, timeless, and just a touch uncanny. Allow ample time to wander the conservatory before the ceremony.',
-    backgroundImage: '/images/details.jpg',
+    backgroundImage: assetPath('/images/details.jpg'),
     layerVariant: 'tracery',
   },
   {
@@ -41,7 +43,7 @@ export const sections: SectionContent[] = [
     subtitle: 'Scenes from the engagement session and manor grounds.',
     description:
       'Hover to linger on the textures; tap to open the lightbox for a closer look.',
-    backgroundImage: '/images/gallery.jpg',
+    backgroundImage: assetPath('/images/gallery.jpg'),
     layerVariant: 'arches',
   },
 ];
@@ -70,32 +72,32 @@ export interface GalleryItem {
 export const galleryItems: GalleryItem[] = [
   {
     id: 'frame-1',
-    src: '/images/gallery/WeddingShoot-005.jpg',
+    src: assetPath('/images/gallery/WeddingShoot-005.jpg'),
     alt: 'Wedding gallery image 1',
   },
   {
     id: 'frame-2',
-    src: '/images/gallery/WeddingShoot-012.jpg',
+    src: assetPath('/images/gallery/WeddingShoot-012.jpg'),
     alt: 'Wedding gallery image 2',
   },
   {
     id: 'frame-3',
-    src: '/images/gallery/WeddingShoot-048.jpg',
+    src: assetPath('/images/gallery/WeddingShoot-048.jpg'),
     alt: 'Wedding gallery image 3',
   },
   {
     id: 'frame-4',
-    src: '/images/gallery/WeddingShoot-107.jpg',
+    src: assetPath('/images/gallery/WeddingShoot-107.jpg'),
     alt: 'Wedding gallery image 4',
   },
   {
     id: 'frame-5',
-    src: '/images/gallery/WeddingShoot-110.jpg',
+    src: assetPath('/images/gallery/WeddingShoot-110.jpg'),
     alt: 'Wedding gallery image 5',
   },
   {
     id: 'frame-6',
-    src: '/images/gallery/WeddingShoot-126.jpg',
+    src: assetPath('/images/gallery/WeddingShoot-126.jpg'),
     alt: 'Wedding gallery image 6',
   },
 ];

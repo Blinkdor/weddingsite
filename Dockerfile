@@ -1,5 +1,7 @@
 # Production image: build frontend and serve via nginx
 FROM node:20-alpine AS builder
+ARG VITE_BASE_PATH=/wedding/
+ENV VITE_BASE_PATH=${VITE_BASE_PATH}
 WORKDIR /app
 
 # Install dependencies
@@ -24,7 +26,7 @@ RUN npm run build
 # Production runtime
 FROM nginx:1.27-alpine
 WORKDIR /usr/share/nginx/html
-COPY --from=builder /app/dist .
+COPY --from=builder /app/dist ./wedding
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80

@@ -1,6 +1,7 @@
 import { forwardRef } from 'react';
 import type { SectionContent } from '../content/siteContent';
 import { ParallaxLayer } from './ParallaxLayer';
+import { assetPath } from '../utils/assetPath';
 
 interface SectionProps {
   content: SectionContent;
@@ -8,14 +9,15 @@ interface SectionProps {
 }
 
 export const Section = forwardRef<HTMLDivElement, SectionProps>(function Section({ content, children }, ref) {
+  const ornament = (name: string) => assetPath(`/ornaments/${name}`);
   const layers = content.layerVariant === 'arches'
     ? [
-        { src: '/ornaments/gothic-arch-3.svg', strength: 0.04, className: 'max-w-lg opacity-40' },
-        { src: '/ornaments/tracery.svg', strength: 0.02, className: 'max-w-2xl opacity-20' },
+        { src: ornament('gothic-arch-3.svg'), strength: 0.04, className: 'max-w-lg opacity-40' },
+        { src: ornament('tracery.svg'), strength: 0.02, className: 'max-w-2xl opacity-20' },
       ]
     : [
-        { src: '/ornaments/tracery.svg', strength: 0.05, className: 'max-w-3xl opacity-35' },
-        { src: '/ornaments/gothic-arch-3.svg', strength: 0.03, className: 'max-w-lg opacity-20' },
+        { src: ornament('tracery.svg'), strength: 0.05, className: 'max-w-3xl opacity-35' },
+        { src: ornament('gothic-arch-3.svg'), strength: 0.03, className: 'max-w-lg opacity-20' },
       ];
 
   return (
@@ -32,7 +34,7 @@ export const Section = forwardRef<HTMLDivElement, SectionProps>(function Section
     >
       <div className="absolute inset-0 z-0 bg-black/30" aria-hidden="true" />
       <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl items-center px-6 py-24 lg:px-20">
-        <div className="w-full rounded-3xl border border-white/15 bg-overlay/70 p-8 backdrop-blur-2xl shadow-panel">
+        <div className="gothic-textbox">
           {children}
         </div>
       </div>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" preserveAspectRatio="none">
+  <defs>
+    <!-- Stroke that gently fades toward the inside for some depth -->
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9a9a9a" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#9a9a9a" stop-opacity="0.75"/>
+    </linearGradient>
+
+    <style>
+      .outer{ fill:none; stroke:url(#edge); stroke-width:4; stroke-linejoin:round; }
+      .inner{ fill:none; stroke:#9a9a9a; stroke-opacity:.55; stroke-width:2; stroke-linejoin:round; }
+      .orn  { fill:none; stroke:#9a9a9a; stroke-opacity:.9; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+      .fine { fill:none; stroke:#9a9a9a; stroke-opacity:.7; stroke-width:1.4; stroke-linecap:round; stroke-linejoin:round; }
+    </style>
+  </defs>
+
+  <!-- OUTER FRAME -->
+  <rect class="outer" x="8" y="8" width="104" height="104" rx="6" ry="6"/>
+
+  <!-- INNER FRAME (gives “double-line” manuscript vibe) -->
+  <rect class="inner" x="16" y="16" width="88" height="88" rx="4" ry="4"/>
+
+  <!-- CORNER GOTHIC CAPS (pointed arch motifs) -->
+  <!-- Top-left -->
+  <path class="orn" d="M18 34 C20 22 28 16 40 18"/>
+  <path class="orn" d="M18 40 C26 36 34 30 40 18"/>
+  <path class="fine" d="M22 30 C26 24 32 22 36 22"/>
+
+  <!-- Top-right -->
+  <path class="orn" d="M102 34 C100 22 92 16 80 18"/>
+  <path class="orn" d="M102 40 C94 36 86 30 80 18"/>
+  <path class="fine" d="M98 30 C94 24 88 22 84 22"/>
+
+  <!-- Bottom-left -->
+  <path class="orn" d="M18 86 C20 98 28 104 40 102"/>
+  <path class="orn" d="M18 80 C26 84 34 90 40 102"/>
+  <path class="fine" d="M22 90 C26 96 32 98 36 98"/>
+
+  <!-- Bottom-right -->
+  <path class="orn" d="M102 86 C100 98 92 104 80 102"/>
+  <path class="orn" d="M102 80 C94 84 86 90 80 102"/>
+  <path class="fine" d="M98 90 C94 96 88 98 84 98"/>
+
+  <!-- EDGE NOTCHES (little “ogee” bites along the sides) -->
+  <path class="fine" d="M60 12 C56 16 56 20 60 24 C64 20 64 16 60 12 Z"/>
+  <path class="fine" d="M60 96 C56 100 56 104 60 108 C64 104 64 100 60 96 Z"/>
+
+  <path class="fine" d="M12 60 C16 56 20 56 24 60 C20 64 16 64 12 60 Z"/>
+  <path class="fine" d="M96 60 C100 56 104 56 108 60 C104 64 100 64 96 60 Z"/>
+
+  <!-- SUBTLE MID-EDGE LANCETS (keeps it gothic but not loud) -->
+  <path class="orn" d="M52 20 C54 14 58 12 60 12 C62 12 66 14 68 20"/>
+  <path class="orn" d="M52 100 C54 106 58 108 60 108 C62 108 66 106 68 100"/>
+
+  <path class="orn" d="M20 52 C14 54 12 58 12 60 C12 62 14 66 20 68"/>
+  <path class="orn" d="M100 52 C106 54 108 58 108 60 C108 62 106 66 100 68"/>
+</svg>
