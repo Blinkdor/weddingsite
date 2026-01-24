@@ -18,7 +18,7 @@ export interface DetailItem {
 export const sections: SectionContent[] = [
   {
     id: 'announcement',
-    title: 'Elowen & Thaddeus',
+    title: 'Tim and Aliscia',
     subtitle: 'Together with their families',
     description:
       'Request the honor of your presence as they bind their vows beneath candlelit arches on the eve of the Harvest Moon.',
@@ -67,8 +67,35 @@ export interface GalleryItem {
   alt: string;
 }
 
-export const galleryItems: GalleryItem[] = Array.from({ length: 6 }, (_, idx) => ({
-  id: `frame-${idx + 1}`,
-  src: `/images/gallery/thumb${idx + 1}.jpg`,
-  alt: `Vintage vignette ${idx + 1}`,
-}));
+export const galleryItems: GalleryItem[] = [
+  {
+    id: 'frame-1',
+    src: '/images/gallery/WeddingShoot-005.jpg',
+    alt: 'Wedding gallery image 1',
+  },
+  {
+    id: 'frame-2',
+    src: '/images/gallery/WeddingShoot-012.jpg',
+    alt: 'Wedding gallery image 2',
+  },
+  {
+    id: 'frame-3',
+    src: '/images/gallery/WeddingShoot-048.jpg',
+    alt: 'Wedding gallery image 3',
+  },
+  {
+    id: 'frame-4',
+    src: '/images/gallery/WeddingShoot-107.jpg',
+    alt: 'Wedding gallery image 4',
+  },
+  {
+    id: 'frame-5',
+    src: '/images/gallery/WeddingShoot-110.jpg',
+    alt: 'Wedding gallery image 5',
+  },
+  {
+    id: 'frame-6',
+    src: '/images/gallery/WeddingShoot-126.jpg',
+    alt: 'Wedding gallery image 6',
+  },
+];

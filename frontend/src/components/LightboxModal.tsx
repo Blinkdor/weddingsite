@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { GalleryItem } from '../content/siteContent';
 
@@ -34,11 +35,15 @@ export function LightboxModal({ open, image, onClose }: LightboxModalProps) {
     }
   }, [open, onClose]);
 
-  return (
+  if (typeof document === 'undefined') {
+    return null;
+  }
+
+  return createPortal(
     <AnimatePresence>
       {open && image && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-6"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -48,24 +53,25 @@ export function LightboxModal({ open, image, onClose }: LightboxModalProps) {
           onClick={onClose}
         >
           <div
-            className="relative w-full max-w-4xl"
+            className="relative h-full w-full"
             onClick={(event) => event.stopPropagation()}
           >
             <img
               src={image.src}
               alt={image.alt}
-              className="w-full rounded-2xl border border-white/20 shadow-panel"
+              className="h-full w-full object-contain"
             />
             <button
               ref={closeButtonRef}
               onClick={onClose}
-              className="absolute -top-4 -right-4 rounded-full border border-white/20 bg-ash/80 px-3 py-1 text-sm uppercase tracking-[0.3em]"
+              className="absolute top-6 right-6 rounded-full border border-white/20 bg-ash/80 px-3 py-1 text-sm uppercase tracking-[0.3em]"
             >
               Close
             </button>
           </div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }

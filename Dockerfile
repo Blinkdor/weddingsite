@@ -16,6 +16,7 @@ RUN npm install
 # Copy source
 COPY frontend/src ./src
 COPY frontend/public ./public
+COPY frontend/index.html ./
 
 # Build static assets
 RUN npm run build

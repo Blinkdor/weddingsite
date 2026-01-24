@@ -11,6 +11,8 @@ services:
     command: sh -c "npm install && npm run dev -- --host 0.0.0.0 --port 4173"
     environment:
       - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_INTERVAL=100
   frontend-prod:
     build:
       context: .

@@ -25,7 +25,7 @@ export function LayoutShell({ sections, activeSection, onNavigate, children }: L
         activeSection={activeSection}
         onNavigate={handleNav}
       />
-      <div className="relative flex-1 lg:pl-32">
+      <div className="relative flex-1">
         <MobileNavToggle
           isOpen={mobileOpen}
           onToggle={() => setMobileOpen((prev) => !prev)}
@@ -57,11 +57,11 @@ function DesktopNav({
 }) {
   return (
     <aside className="pointer-events-none fixed inset-y-0 left-0 z-20 hidden lg:block">
-      <div className="flex h-full flex-col justify-between px-8 py-12">
+      <div className="flex h-full flex-col justify-between px-4 py-12">
         <div className="pointer-events-auto space-y-3">
-          <p className="tracking-[0.4em] text-xs uppercase text-bone/70 drop-shadow-lg">E & T</p>
-          <h1 className="text-3xl font-display text-bone drop-shadow-xl">Midnight Union</h1>
-          <p className="text-bone/70 text-sm uppercase tracking-[0.5em] drop-shadow-lg">31 · X · MMXXV</p>
+          <p className="tracking-[0.4em] text-xs uppercase text-bone/70 drop-shadow-lg">T & A</p>
+          <h1 className="text-3xl font-display text-bone drop-shadow-xl">Wedding</h1>
+          <p className="text-bone/70 text-sm uppercase tracking-[0.5em] drop-shadow-lg">1 NOV 2026</p>
         </div>
         <nav aria-label="Primary" className="pointer-events-auto">
           <ul className="space-y-6">
@@ -75,17 +75,14 @@ function DesktopNav({
                   )}
                   onClick={() => onNavigate(section.id)}
                 >
-                  <span className="inline-flex items-center gap-3">
-                    <span className="h-px w-8 bg-bone/40" aria-hidden />
-                    {section.title}
-                  </span>
+                  <span className="inline-flex items-center">{section.title}</span>
                 </button>
               </li>
             ))}
           </ul>
         </nav>
         <div className="pointer-events-auto text-xs uppercase tracking-[0.4em] text-bone/60 drop-shadow-lg">
-          Whispers past midnight
+          {/* Maybe some stuff idk */}
         </div>
       </div>
     </aside>

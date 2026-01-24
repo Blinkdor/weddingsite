@@ -10,12 +10,12 @@ interface SectionProps {
 export const Section = forwardRef<HTMLDivElement, SectionProps>(function Section({ content, children }, ref) {
   const layers = content.layerVariant === 'arches'
     ? [
-        { src: '/ornaments/gothic-arch.svg', strength: 0.04, className: 'max-w-lg opacity-40' },
+        { src: '/ornaments/gothic-arch-3.svg', strength: 0.04, className: 'max-w-lg opacity-40' },
         { src: '/ornaments/tracery.svg', strength: 0.02, className: 'max-w-2xl opacity-20' },
       ]
     : [
         { src: '/ornaments/tracery.svg', strength: 0.05, className: 'max-w-3xl opacity-35' },
-        { src: '/ornaments/gothic-arch.svg', strength: 0.03, className: 'max-w-lg opacity-20' },
+        { src: '/ornaments/gothic-arch-3.svg', strength: 0.03, className: 'max-w-lg opacity-20' },
       ];
 
   return (
@@ -25,7 +25,7 @@ export const Section = forwardRef<HTMLDivElement, SectionProps>(function Section
       aria-label={content.title}
       className="relative min-h-screen snap-start overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(180deg, rgba(5,3,8,0.85), rgba(5,3,8,0.65)), url(${content.backgroundImage})`,
+        backgroundImage: `linear-gradient(180deg, rgba(5,3,8,0.35), rgba(5,3,8,0.15)), url(${content.backgroundImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

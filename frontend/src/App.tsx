@@ -1,7 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { LayoutShell } from './components/LayoutShell';
 import { Section } from './components/Section';
-import { TransitionOverlay, type TransitionOverlayHandle } from './components/TransitionOverlay';
+import {
+  TransitionOverlay,
+  type TransitionDirection,
+  type TransitionOverlayHandle,
+} from './components/TransitionOverlay';
 import { GalleryGrid } from './components/GalleryGrid';
 import type { SectionContent, SectionId } from './content/siteContent';
 import { detailItems, galleryItems, sections } from './content/siteContent';
@@ -12,6 +16,19 @@ const initialRefs: SectionRefs = {
   announcement: null,
   details: null,
   gallery: null,
+};
+
+const sectionIndex = new Map(
+  sections.map((section, index) => [section.id, index])
+);
+
+const getScrollDirection = (current: SectionId, next: SectionId): TransitionDirection => {
+  const currentIndex = sectionIndex.get(current);
+  const nextIndex = sectionIndex.get(next);
+  if (currentIndex === undefined || nextIndex === undefined) {
+    return 'down';
+  }
+  return nextIndex < currentIndex ? 'up' : 'down';
 };
 
 function App() {
@@ -58,15 +75,16 @@ function App() {
   );
 
   const scrollToSection = useCallback(
-    async (id: SectionId) => {
+    (id: SectionId) => {
       const node = sectionRefs.current[id];
       if (!node) return;
-      await transitionRef.current?.play();
+      const direction = getScrollDirection(activeSection, id);
+      void transitionRef.current?.play(direction);
       node.scrollIntoView({ behavior: 'smooth', block: 'start' });
       setActiveSection(id);
       window.history.replaceState(null, '', `#${id}`);
     },
-    []
+    [activeSection]
   );
 
   useEffect(() => {

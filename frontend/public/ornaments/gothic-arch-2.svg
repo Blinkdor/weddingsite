@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 600" fill="none">
+  <style>
+    :root{
+      --c: currentColor;
+      --w: 3.5;     /* main */
+      --w2: 2.4;    /* secondary */
+      --w3: 1.6;    /* filigree */
+    }
+    .main{ stroke:var(--c); stroke-width:var(--w);  stroke-linecap:round; stroke-linejoin:round; }
+    .sub { stroke:var(--c); stroke-width:var(--w2); stroke-linecap:round; stroke-linejoin:round; }
+    .fine{ stroke:var(--c); stroke-width:var(--w3); stroke-linecap:round; stroke-linejoin:round; opacity:.95; }
+  </style>
+
+  <!-- Cohesive outer + inner arch: same "family" of curves -->
+  <path class="main" d="
+    M210 28
+    C150 60 106 120 88 198
+    C72 268 72 360 72 542
+    L72 576
+    L348 576
+    L348 542
+    C348 360 348 268 332 198
+    C314 120 270 60 210 28 Z"/>
+
+  <path class="sub" d="
+    M210 64
+    C162 90 128 138 114 202
+    C102 256 102 346 102 526
+    L102 552
+    L318 552
+    L318 526
+    C318 346 318 256 306 202
+    C292 138 258 90 210 64 Z"/>
+
+  <!-- Center spine (ties the whole thing together) -->
+  <path class="sub" d="M210 78 L210 552"/>
+
+  <!-- Tracery crown: one connected, symmetric motif -->
+  <g class="fine">
+    <!-- central bud -->
+    <path d="
+      M210 118
+      C196 132 192 150 196 168
+      C200 186 206 194 210 206
+      C214 194 220 186 224 168
+      C228 150 224 132 210 118 Z"/>
+
+    <!-- left + right sweeping ribs that meet the window shoulders -->
+    <path d="
+      M210 142
+      C176 148 150 172 142 206
+      C136 232 150 252 176 260
+      C154 260 136 248 128 230
+      C114 198 136 156 210 142"/>
+    <path d="
+      M210 142
+      C244 148 270 172 278 206
+      C284 232 270 252 244 260
+      C266 260 284 248 292 230
+      C306 198 284 156 210 142"/>
+
+    <!-- top web connecting ribs (kept minimal, but cohesive) -->
+    <path d="M138 236 C160 214 184 202 210 196"/>
+    <path d="M282 236 C260 214 236 202 210 196"/>
+  </g>
+
+  <!-- Paired lancet windows: share the same shoulder height + curvature -->
+  <g>
+    <!-- Left lancet -->
+    <path class="sub" d="
+      M120 552
+      L120 270
+      C120 228 146 194 182 174
+      C168 198 162 222 162 252
+      L162 552 Z"/>
+    <!-- Right lancet (mirrored) -->
+    <path class="sub" d="
+      M300 552
+      L300 270
+      C300 228 274 194 238 174
+      C252 198 258 222 258 252
+      L258 552 Z"/>
+  </g>
+
+  <!-- Mullions and panes: aligned to the same baseline grid -->
+  <g class="fine">
+    <!-- vertical mullions -->
+    <path d="M141 552 L141 268"/>
+    <path d="M162 552 L162 252"/>
+    <path d="M279 552 L279 268"/>
+    <path d="M258 552 L258 252"/>
+
+    <!-- pane horizontals (shared y values for both windows) -->
+    <path d="M120 500 H162"/>
+    <path d="M120 448 H162"/>
+    <path d="M120 396 H162"/>
+    <path d="M120 344 H162"/>
+
+    <path d="M258 500 H300"/>
+    <path d="M258 448 H300"/>
+    <path d="M258 396 H300"/>
+    <path d="M258 344 H300"/>
+  </g>
+
+  <!-- Soft inner “halo” outline to unify everything (very light) -->
+  <path class="fine" opacity=".55" d="
+    M210 44
+    C156 72 118 126 102 202
+    C90 262 90 350 90 538
+    L90 564
+    L330 564
+    L330 538
+    C330 350 330 262 318 202
+    C302 126 264 72 210 44 Z"/>
+</svg>
