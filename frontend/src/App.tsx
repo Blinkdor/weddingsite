@@ -125,18 +125,17 @@ function App() {
 function renderSectionBlock(section: SectionContent) {
   if (section.id === 'announcement') {
     return (
-      <div className="space-y-6 text-center lg:text-left">
+      <div className="space-y-6 text-center">
         <p className="text-sm uppercase tracking-[0.6em] text-bone/60">{section.subtitle}</p>
-        <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl">{section.title}</h2>
-        <p className="text-bone/80 lg:mx-0 lg:max-w-2xl mx-auto">{section.description}</p>
+        <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl">{section.title}</h2>
+        <p className="text-bone/80 lg:max-w-2xl mx-auto">{section.description}</p>
         {section.accentLine && (
-          <div className="flex items-center justify-center gap-4 lg:justify-start">
+          <div className="flex items-center justify-center gap-4">
             <span className="h-px w-12 bg-bone/40" />
             <span className="tracking-[0.4em] uppercase text-xs text-accent">{section.accentLine}</span>
             <span className="h-px w-12 bg-bone/40" />
           </div>
         )}
-        <p className="text-lg text-bone/90">Blackwood Manor · Ravenscroft</p>
       </div>
     );
   }
@@ -156,7 +155,7 @@ function renderSectionBlock(section: SectionContent) {
               className="rounded-2xl border border-white/15 bg-black/20 p-4 backdrop-blur-lg"
             >
               <p className="text-xs uppercase tracking-[0.4em] text-accent">{item.label}</p>
-              <p className="mt-3 text-sm text-bone/80">{item.body}</p>
+              <p className="mt-3 text-sm text-bone/80 whitespace-pre-line">{item.body}</p>
             </div>
           ))}
         </div>

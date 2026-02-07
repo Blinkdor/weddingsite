@@ -7,5 +7,8 @@ export default defineConfig(() => {
   return {
     plugins: [react()],
     base,
+    server: {
+      allowedHosts: ['dykstra-rath.family'],
+    },
   };
 });

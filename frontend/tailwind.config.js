@@ -13,6 +13,7 @@ export default {
       fontFamily: {
         display: ['var(--font-display)', '"Playfair Display"', 'serif'],
         body: ['var(--font-body)', '"Libre Baskerville"', 'serif'],
+        brand: ['"Brand"', 'sans-serif'],
       },
       boxShadow: {
         panel: '0 0 40px rgba(0, 0, 0, 0.35)',

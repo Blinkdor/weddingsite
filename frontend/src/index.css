@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Starlight Romance';
+  src: url('/fonts/Starlight Romance.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brand';
+  src: url('/fonts/Brand.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   color-scheme: dark;
   --color-midnight: #0d0b15;
@@ -9,7 +25,7 @@
   --color-bone: #f1ede4;
   --color-accent: #b8975b;
   --color-overlay: rgba(8, 6, 12, 0.7);
-  --font-display: 'Cormorant Garamond', 'Playfair Display', serif;
+  --font-display: 'Starlight Romance', 'Cormorant Garamond', 'Playfair Display', serif;
   --font-body: 'Spectral', 'Libre Baskerville', serif;
 }
 

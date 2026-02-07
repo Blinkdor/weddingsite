@@ -21,28 +21,26 @@ export const sections: SectionContent[] = [
   {
     id: 'announcement',
     title: 'Tim and Aliscia',
-    subtitle: 'Together with their families',
+    subtitle: '',
     description:
-      'Request the honor of your presence as they bind their vows beneath candlelit arches on the eve of the Harvest Moon.',
-    accentLine: 'Saturday, October 31 · Blackwood Manor',
+      'Request your presence as they bind their vows, celebrate with friends & family, and enjoy an enchanting evening in a historic castle.',
+    accentLine: 'Sunday, November 1st · Joslyn Castle, Omaha, NE',
     backgroundImage: assetPath('/images/announcement.jpg'),
     layerVariant: 'arches',
   },
   {
     id: 'details',
     title: 'The Details',
-    subtitle: 'Arrive prepared for an evening of whispered vows and string quartets.',
-    description:
-      'Each moment is curated to feel intimate, timeless, and just a touch uncanny. Allow ample time to wander the conservatory before the ceremony.',
+    subtitle: '',
+    description: '',
     backgroundImage: assetPath('/images/details.jpg'),
     layerVariant: 'tracery',
   },
   {
     id: 'gallery',
     title: 'Glimpses',
-    subtitle: 'Scenes from the engagement session and manor grounds.',
-    description:
-      'Hover to linger on the textures; tap to open the lightbox for a closer look.',
+    subtitle: '',
+    description: '',
     backgroundImage: assetPath('/images/gallery.jpg'),
     layerVariant: 'arches',
   },
@@ -51,16 +49,28 @@ export const sections: SectionContent[] = [
 export const detailItems: DetailItem[] = [
   {
     label: 'Location',
-    body: 'Blackwood Manor Conservatory · 1313 Wraith Lane · Ravenscroft, NY',
+    body: 'Joslyn Castle · 3902 Davenport St · Omaha, NE',
   },
   {
     label: 'Time',
-    body: 'Doors at 6:00 PM · Candlelit vows at 7:13 PM · Reception to follow past midnight',
+    body: '· Doors at 6:00 PM \n · Vows at 6:30 PM \n · Reception to follow, until 10:30 PM',
   },
   {
     label: 'Dress',
-    body: 'Victorian evening attire encouraged. Deep hues, velvet textures, and heirloom embellishments welcomed.',
+    body: ' · Victorian/classy evening attire encouraged\n · Deep hues, velvet textures, and heirloom embellishments welcomed\n · NO BLACK DRESSES - The bride will be draped in an all-black dress.',
   },
+  {
+    label: 'Rules - AKA - How the newlyweds get to keep their damage deposit',
+    body: 'Per our rental contract: \n · No Smoking anywhere on castle grounds',
+  },
+  {
+    label: 'Photos',
+    body: 'Disposable cameras will be provided at the event · prioritize picture taking with that perfectly imperfect medium over the course of the evening.',
+  },
+  {
+    label: 'Food/Drink',
+    body: 'Charcuterie, grazing table, and drink to be served following the main event.',
+  }
 ];
 
 export interface GalleryItem {

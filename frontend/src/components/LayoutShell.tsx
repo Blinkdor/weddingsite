@@ -59,9 +59,9 @@ function DesktopNav({
     <aside className="pointer-events-none fixed inset-y-0 left-0 z-20 hidden lg:block">
       <div className="flex h-full flex-col justify-between px-4 py-12">
         <div className="pointer-events-auto space-y-3">
-          <p className="tracking-[0.4em] text-xs uppercase text-bone/70 drop-shadow-lg">T & A</p>
+          {/* <p className="tracking-[0.4em] text-xs uppercase text-bone/70 drop-shadow-lg">T & A</p>
           <h1 className="text-3xl font-display text-bone drop-shadow-xl">Wedding</h1>
-          <p className="text-bone/70 text-sm uppercase tracking-[0.5em] drop-shadow-lg">1 NOV 2026</p>
+          <p className="text-bone/70 text-sm uppercase tracking-[0.5em] drop-shadow-lg">1 NOV 2026</p> */}
         </div>
         <nav aria-label="Primary" className="pointer-events-auto">
           <ul className="space-y-6">
@@ -70,7 +70,7 @@ function DesktopNav({
                 <button
                   type="button"
                   className={classNames(
-                    'relative text-left font-display tracking-[0.3em] text-lg uppercase transition-colors drop-shadow-lg',
+                    'relative text-left font-brand tracking-[0.3em] text-lg uppercase transition-colors drop-shadow-lg',
                     activeSection === section.id ? 'text-accent' : 'text-bone/60 hover:text-bone'
                   )}
                   onClick={() => onNavigate(section.id)}
@@ -140,7 +140,7 @@ function MobileNav({
             key={section.id}
             onClick={() => onNavigate(section.id)}
             className={classNames(
-              'text-3xl font-display tracking-wide uppercase',
+              'text-3xl font-brand tracking-wide uppercase',
               activeSection === section.id ? 'text-accent' : 'text-bone/70 hover:text-bone'
             )}
           >
