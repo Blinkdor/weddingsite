@@ -7,6 +7,7 @@ import {
   type TransitionOverlayHandle,
 } from './components/TransitionOverlay';
 import { GalleryGrid } from './components/GalleryGrid';
+import { LancetCard } from './components/LancetCard';
 import type { SectionContent, SectionId } from './content/siteContent';
 import { detailItems, galleryItems, sections } from './content/siteContent';
 
@@ -141,24 +142,38 @@ function renderSectionBlock(section: SectionContent) {
   }
 
   if (section.id === 'details') {
+    const lancetItems = detailItems.slice(0, 3);
+    const simpleItems = detailItems.slice(3);
+
     return (
-      <div className="space-y-8">
-        <header className="space-y-3 text-center lg:text-left">
+      <div className="space-y-10">
+        <header className="space-y-3 text-center">
           <p className="text-xs uppercase tracking-[0.5em] text-bone/60">{section.subtitle}</p>
           <h2 className="font-display text-3xl lg:text-4xl">{section.title}</h2>
-          <p className="text-bone/70 lg:max-w-2xl">{section.description}</p>
+          <p className="text-bone/70 lg:max-w-2xl mx-auto">{section.description}</p>
         </header>
-        <div className="grid gap-4 md:grid-cols-3">
-          {detailItems.map((item) => (
-            <div
-              key={item.label}
-              className="rounded-2xl border border-white/15 bg-black/20 p-4 backdrop-blur-lg"
-            >
-              <p className="text-xs uppercase tracking-[0.4em] text-accent">{item.label}</p>
-              <p className="mt-3 text-sm text-bone/80 whitespace-pre-line">{item.body}</p>
-            </div>
+
+        {/* Cathedral lancet window cards — top 3 */}
+        <div className="grid gap-6 md:grid-cols-3">
+          {lancetItems.map((item) => (
+            <LancetCard key={item.label} label={item.label} body={item.body} />
           ))}
         </div>
+
+        {/* Simpler cards for remaining items */}
+        {simpleItems.length > 0 && (
+          <div className="grid gap-4 md:grid-cols-3">
+            {simpleItems.map((item) => (
+              <div
+                key={item.label}
+                className="rounded border border-white/10 bg-black/20 p-4 backdrop-blur-lg"
+              >
+                <p className="text-xs uppercase tracking-[0.4em] text-[#a0a0aa]">{item.label}</p>
+                <p className="mt-3 text-sm text-bone/80 whitespace-pre-line">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     );
   }

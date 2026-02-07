@@ -61,38 +61,63 @@ button:focus-visible {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Ornate text boxes that reuse the engraved border artwork */
+/* Ornate text boxes — toned down to not compete with lancet cards */
 .gothic-textbox {
-  border: 14px solid transparent;
-  border-image-source: url('./assets/border.svg');
-  border-image-slice: 30;
-  border-image-width: 14px;
-  border-image-repeat: stretch;
-  border-radius: 12px;
-  background: linear-gradient(145deg, rgba(13, 11, 21, 0.85), rgba(20, 16, 30, 0.7));
+  border: 1px solid rgba(160, 160, 170, 0.15);
+  border-radius: 4px;
+  background: linear-gradient(145deg, rgba(13, 11, 21, 0.8), rgba(20, 16, 30, 0.6));
   color: var(--color-bone);
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.5;
   padding: 1.25rem 1.5rem;
   min-height: 6rem;
-  width: min(100%, 48rem);
+  width: min(100%, 60rem);
   margin-left: auto;
   margin-right: auto;
-  resize: vertical;
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
-  transition: border-color 150ms ease, box-shadow 150ms ease, transform 200ms ease;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  transition: box-shadow 150ms ease;
 }
 
 .gothic-textbox:focus,
 .gothic-textbox:focus-within {
   outline: none;
-  border-image-source: url('./assets/border.svg');
-  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.55);
-  transform: translateY(-2px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.45);
 }
 
 .gothic-textbox::placeholder {
   color: rgba(241, 237, 228, 0.6);
   font-style: italic;
+}
+
+/* ── Cathedral lancet window cards ── */
+.lancet-card {
+  position: relative;
+  min-height: 320px;
+  transition: transform 300ms ease, filter 300ms ease;
+}
+
+.lancet-card:hover {
+  transform: translateY(-4px);
+}
+
+.lancet-frame {
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5));
+  transition: filter 400ms ease;
+}
+
+.lancet-card:hover .lancet-frame {
+  filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.6))
+         drop-shadow(0 0 8px rgba(168, 168, 176, 0.15));
+}
+
+.lancet-label {
+  color: rgba(180, 180, 192, 0.9);
+  font-family: var(--font-body);
+  letter-spacing: 0.45em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.lancet-content {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
