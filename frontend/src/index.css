@@ -121,3 +121,92 @@ button:focus-visible {
 .lancet-content {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
+
+/* ── RSVP Form ── */
+.rsvp-input {
+  background: rgba(13, 11, 21, 0.6);
+  border: 1px solid rgba(160, 160, 170, 0.25);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  color: var(--color-bone);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  text-align: center;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.rsvp-input::placeholder {
+  color: rgba(241, 237, 228, 0.35);
+  font-style: italic;
+}
+
+.rsvp-input:focus {
+  outline: none;
+  border-color: rgba(160, 160, 170, 0.5);
+  box-shadow: 0 0 0 3px rgba(160, 160, 170, 0.1);
+}
+
+.rsvp-toggle {
+  padding: 0.6rem 1.25rem;
+  border: 1px solid rgba(160, 160, 170, 0.2);
+  border-radius: 4px;
+  background: rgba(13, 11, 21, 0.5);
+  color: var(--color-bone);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.rsvp-toggle:hover {
+  border-color: rgba(160, 160, 170, 0.4);
+  background: rgba(13, 11, 21, 0.7);
+}
+
+.rsvp-toggle--active {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: rgba(184, 151, 91, 0.1);
+  box-shadow: 0 0 12px rgba(184, 151, 91, 0.15);
+}
+
+.rsvp-submit {
+  display: inline-block;
+  padding: 0.75rem 2.5rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  cursor: pointer;
+  transition: all 250ms ease;
+}
+
+.rsvp-submit:hover:not(:disabled) {
+  background: rgba(184, 151, 91, 0.12);
+  box-shadow: 0 0 20px rgba(184, 151, 91, 0.15);
+}
+
+.rsvp-submit:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.rsvp-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(184, 151, 91, 0.3);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: rsvp-spin 0.6s linear infinite;
+}
+
+@keyframes rsvp-spin {
+  to { transform: rotate(360deg); }
+}

@@ -8,6 +8,7 @@ import {
 } from './components/TransitionOverlay';
 import { GalleryGrid } from './components/GalleryGrid';
 import { LancetCard } from './components/LancetCard';
+import { RsvpForm } from './components/RsvpForm';
 import type { SectionContent, SectionId } from './content/siteContent';
 import { detailItems, galleryItems, sections } from './content/siteContent';
 
@@ -17,6 +18,7 @@ const initialRefs: SectionRefs = {
   announcement: null,
   details: null,
   gallery: null,
+  rsvp: null,
 };
 
 const sectionIndex = new Map(
@@ -174,6 +176,20 @@ function renderSectionBlock(section: SectionContent) {
             ))}
           </div>
         )}
+      </div>
+    );
+  }
+
+  if (section.id === 'rsvp') {
+    return (
+      <div className="space-y-8 text-center">
+        <header className="space-y-3">
+          <h2 className="font-display text-4xl lg:text-5xl">{section.title}</h2>
+          <p className="text-bone/70 mx-auto max-w-lg">
+            Kindly let us know if you will be joining us for this enchanted evening.
+          </p>
+        </header>
+        <RsvpForm />
       </div>
     );
   }

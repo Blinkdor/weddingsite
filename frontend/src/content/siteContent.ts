@@ -1,6 +1,6 @@
 import { assetPath } from '../utils/assetPath';
 
-export type SectionId = 'announcement' | 'details' | 'gallery';
+export type SectionId = 'announcement' | 'details' | 'gallery' | 'rsvp';
 
 export interface SectionContent {
   id: SectionId;
@@ -43,6 +43,14 @@ export const sections: SectionContent[] = [
     description: '',
     backgroundImage: assetPath('/images/gallery.jpg'),
     layerVariant: 'arches',
+  },
+  {
+    id: 'rsvp',
+    title: 'RSVP',
+    subtitle: '',
+    description: '',
+    backgroundImage: assetPath('/images/rsvp.jpg'),
+    layerVariant: 'tracery',
   },
 ];
 

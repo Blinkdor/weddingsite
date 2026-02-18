@@ -1,7 +1,9 @@
 # Production image: build frontend and serve via nginx
 FROM node:20-alpine AS builder
 ARG VITE_BASE_PATH=/wedding/
+ARG VITE_RSVP_SCRIPT_URL=https://script.google.com/macros/s/AKfycbw9kquTYKpvgClTCSRAWH1Ld_5KH1D6Tf05nA9Id4R3rF1l-1N86JwDQdZJKiIHYtt9Pw/exec
 ENV VITE_BASE_PATH=${VITE_BASE_PATH}
+ENV VITE_RSVP_SCRIPT_URL=${VITE_RSVP_SCRIPT_URL}
 WORKDIR /app
 
 # Install dependencies
